@@ -1,0 +1,10 @@
+com/github/kayjamlang/io/stream/Utils.java
+ com.github.kayjamlang.io.stream.Utils
+com/github/kayjamlang/io/stream/OutputStreamClass.java
+ com.github.kayjamlang.io.stream.OutputStreamClass
+com/github/kayjamlang/io/stream/Closeable.java
+ com.github.kayjamlang.io.stream.Closeable
+com/github/kayjamlang/io/stream/IOStreamLibrary.java
+ com.github.kayjamlang.io.stream.IOStreamLibrary
+com/github/kayjamlang/io/stream/InputStreamClass.java
+ com.github.kayjamlang.io.stream.InputStreamClass

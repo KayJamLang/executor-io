@@ -1,0 +1,4 @@
+com/github/kayjamlang/io/file/FileClass.java
+ com.github.kayjamlang.io.file.FileClass
+com/github/kayjamlang/io/file/FileLibrary.java
+ com.github.kayjamlang.io.file.FileLibrary

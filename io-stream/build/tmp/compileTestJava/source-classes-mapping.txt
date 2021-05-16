@@ -1,0 +1,4 @@
+com/github/kayjamlang/io/stream/InputTests.java
+ com.github.kayjamlang.io.stream.InputTests
+com/github/kayjamlang/io/stream/OutputTests.java
+ com.github.kayjamlang.io.stream.OutputTests
