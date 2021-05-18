@@ -5,11 +5,11 @@ import com.github.kayjamlang.core.expressions.data.Argument;
 import com.github.kayjamlang.executor.ClassUtils;
 import com.github.kayjamlang.executor.Context;
 import com.github.kayjamlang.executor.Executor;
+import com.github.kayjamlang.executor.Void;
 import com.github.kayjamlang.executor.exceptions.KayJamRuntimeException;
 import com.github.kayjamlang.executor.libs.Library;
 
 import java.io.ByteArrayOutputStream;
-import java.io.InputStream;
 import java.io.OutputStream;
 import java.util.Collections;
 
@@ -35,12 +35,12 @@ public class OutputStreamClass extends Library.LibClass {
                 context.parentContext.addVariable(OUTPUT_STREAM_FIELD, someInput);
             }else throw new KayJamRuntimeException(mainContext.parent, "wtf");
 
-            return Void.TYPE;
+            return Void.INSTANCE;
         }, new Argument(Type.ANY, OUTPUT_STREAM_FIELD)));
 
         addConstructor(new Library.LibConstructor((mainContext, context) -> {
             context.parentContext.addVariable(OUTPUT_STREAM_FIELD, new ByteArrayOutputStream());
-            return Void.TYPE;
+            return Void.INSTANCE;
         }));
 
         addFunction(new Library.LibFunction("write", Type.VOID, (mainContext, context) -> {
@@ -49,7 +49,7 @@ public class OutputStreamClass extends Library.LibClass {
                 ((OutputStream) someInput).write((int) context.getVariable(OUTPUT_STREAM_BYTE_PARAMETER));
             }
 
-            return Void.TYPE;
+            return Void.INSTANCE;
         }, new Argument(Type.INTEGER, OUTPUT_STREAM_BYTE_PARAMETER)));
 
         addFunction(new Library.LibFunction("flush", Type.VOID, (mainContext, context) -> {
@@ -58,7 +58,7 @@ public class OutputStreamClass extends Library.LibClass {
                 ((OutputStream) someInput).flush();
             }
 
-            return Void.TYPE;
+            return Void.INSTANCE;
         }, new Argument(Type.INTEGER, OUTPUT_STREAM_BYTE_PARAMETER)));
 
         addFunction(new Library.LibFunction("close", Type.VOID, (mainContext, context) -> {
@@ -67,7 +67,7 @@ public class OutputStreamClass extends Library.LibClass {
                 ((OutputStream) someInput).close();
             }
 
-            return Void.TYPE;
+            return Void.INSTANCE;
         }));
 
         addFunction(new Library.LibFunction("toString", Utils.nullable(Type.STRING), (mainContext, context) -> {
@@ -80,7 +80,7 @@ public class OutputStreamClass extends Library.LibClass {
         }));
     }
 
-    public InputStream getOutputStream(){
+    public OutputStream getOutputStream(){
         return ((Context) data.get("ctx")).getVariable(OUTPUT_STREAM_FIELD);
     }
 }

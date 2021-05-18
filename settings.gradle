@@ -1,3 +1,5 @@
 include 'io-stream'
 include 'io-file'
+include 'io-print'
+include 'io-web'
 
